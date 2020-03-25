@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/signup.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <title>Login</title>
+</head>
+<body>
+    <h1>LOGIN</h1>
+    
+    <form id="data" method="post">
+        <input type="text" name="email" placeholder="email" required>
+        <input type="password" name="password" placeholder="password" required>
+        <input type="submit" name="submit" id="submit">
+    </form>
+    <p class="error"><%=msg%></p>
+
+    <a href="signup">Need an account? Go to the sign up page</a>
+</body>
+</html>

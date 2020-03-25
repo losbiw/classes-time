@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/signup.css">
+    <title>Sign Up</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>SIGN UP</h1>
+    
+    <form id="data" method="post" onsubmit="return formSubmit();">
+        <select form="data" name="form" onfocus='this.size=4;' onblur='this.size=1;' onchange='this.size=1; this.blur();' required>
+            <option value="" disabled selected>form</option>
+            <option value="5A">5А</option>
+            <option value="5B">5Б</option>
+            <option value="5V">5В</option>
+            <option value="6A">6А</option>
+            <option value="6B">6Б</option>
+            <option value="6V">6В</option>
+            <option value="7A">7А</option>
+            <option value="7B">7Б</option>
+            <option value="7V">7В</option>
+            <option value="8A">8А</option>
+            <option value="8B">8Б</option>
+            <option value="8V">8В</option>
+            <option value="9A">9А</option>
+            <option value="9B">9Б</option>
+            <option value="9V">9В</option>
+            <option value="10A">10А</option>
+            <option value="10B">10Б</option>
+            <option value="11A">11А</option>
+            <option value="11B">11Б</option>
+        </select>
+        <input type="text" name="email" placeholder="email" required>
+        <input type="password" name="password" id="password" placeholder="password" required>
+        <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="confirm your password" required>
+        <input type="submit" name="submit" id="submit">
+    </form>
+
+    <a href="login">Go back to the login page</a>
+
+    
+    <script src="js/signup-client.js"></script>
+</body>
+</html>

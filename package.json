@@ -1,0 +1,26 @@
+{
+  "name": "classes",
+  "version": "1.0.0",
+  "description": "Project that shows current lesson in school",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "frontend",
+    "backend",
+    "classes",
+    "school"
+  ],
+  "author": "Skorinov Vladislav skorinov41@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.5",
+    "nodemon": "^2.0.2"
+  }
+}
