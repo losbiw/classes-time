@@ -22,17 +22,10 @@
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-<<<<<<< HEAD
     "mongoose": "^5.9.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2",
-=======
-    "mongoose": "^5.9.5",
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.2"
-  },
-  "devDependencies": {
->>>>>>> c8b02adf5987020f08fc5f396c43aa6fb18e5d92
-    "dotenv": "^8.2.0"
   }
 }
