@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,9 +14,9 @@ app.get('/', (req, res)=>{
     return res.redirect('/login');
 });
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/public', express.static('public'));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use('/signup', require('./routes/signup'));
 app.use('/login', require('./routes/login'));
