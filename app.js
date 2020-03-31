@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
-require('dotenv/config');
+
+if (process.env.NODE_ENV !== 'production') { require('dotenv/config') }
 
 app.set('view engine', 'ejs');
 
@@ -13,9 +15,9 @@ app.get('/', (req, res)=>{
     return res.redirect('/login');
 });
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/public', express.static('public'));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.use('/signup', require('./routes/signup'));
 app.use('/login', require('./routes/login'));

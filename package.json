@@ -4,7 +4,10 @@
   "description": "Project that shows current lesson in school",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app"
+    "start": "node app"
+  },
+  "engines": {
+    "node": "13.9.0"
   },
   "keywords": [
     "node",
@@ -17,10 +20,12 @@
   "author": "Skorinov Vladislav skorinov41@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "mongoose": "^5.9.5",
-    "nodemon": "^2.0.2"
+    "mongoose": "^5.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "dotenv": "^8.2.0"
   }
 }

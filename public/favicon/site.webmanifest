@@ -1,0 +1,9 @@
+{
+    "icons": [
+        {
+            "src": "share.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ]
+}
