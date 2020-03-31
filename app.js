@@ -23,6 +23,7 @@ app.use('/login', require('./routes/login'));
 app.use('/user', require('./routes/classes'));
 
 mongoose.connect(process.env.CONNECTION, {useNewUrlParser: true}, ()=>console.log('The database is connected'));
+console.log(process.env.CONNECTION);
 
 app.listen(PORT, ()=>{
     console.log(`The server is listening on the port ${PORT}`);
