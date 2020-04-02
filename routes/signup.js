@@ -52,7 +52,7 @@ router.post('/', async (req, res)=>{
             });
         });
         
-        return res.redirect('../../login');
+        return res.redirect('/login');
     } else{
         res.render('signup', {msg: 'The user already exists'});
     }
