@@ -23,4 +23,16 @@ router.get('/:id/getClasses', async (req, res)=>{
     const classes = require(`../public/classes/${user[0].form}`);
     res.json(classes);
 });
+
+router.get('/:id/confirm', async (req, res)=>{
+    res.sendFile(path.join(__dirname, '../public/confirm.html'));
+})
+
+router.patch('/:id/confirm', async (req, res) =>{
+    const confirmedUser = await User.updateOne(
+        {_id: req.params.id},
+        {$set: {isConfirmed: true}}
+    );
+});
+
 module.exports = router;

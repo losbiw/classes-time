@@ -55,9 +55,10 @@ function updatingTheme(theme){
 
 function returnClass(){
     if(time < endings[0]){
+        console.log('perviy');
         return day[0];
     }
-    else if(time > endings[endings.length - 1]){
+    else if(time > endings[day.length - 1]){
         $('p').text('Congrats');
         return "It seems like it's finally time to go home";
     }

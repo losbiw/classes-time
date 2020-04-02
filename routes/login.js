@@ -13,7 +13,11 @@ router.post('/', async (req, res)=>{
     if(check){
         const currentUser = users.filter(user => user.email === req.body.email);
         if(req.body.password === currentUser[0].password){
-            res.redirect(`/user/${currentUser[0].id}`);
+            if(currentUser[0].isConfirmed === true){
+                return res.redirect(`/user/${currentUser[0].id}`);
+            } else{
+                res.render('login', {msg: 'Confirm your email'});
+            }     
         } else{
             res.render('login', {msg: 'The password is wrong'});
         }

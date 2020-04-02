@@ -94,6 +94,10 @@ a{
     color: #d11f1f;
 }
 
+.confirmation{
+    margin: 2vh;
+}
+
 @media screen and (max-width: 900px){
     input{
         width: 70vw;
@@ -101,5 +105,9 @@ a{
 
     select{
         width: 70vw;
+    }
+
+    .confirmation{
+        font-size: 10vw;
     }
 }
