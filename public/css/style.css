@@ -38,6 +38,10 @@ button{
     height: 5vh;
     width: 5vh;
 }
+.SVGs:hover{
+    transform: scale(1.2);
+    transition: 300ms;
+}
 #minecraftMode img{
     height: 5vh;
     width: 5vh;
