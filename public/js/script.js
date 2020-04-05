@@ -31,12 +31,12 @@ window.onload = function(){
         minuteForConvert = "0" + minuteForConvert;
     }
     time = parseInt(hourForConvert + minuteForConvert, 10);
-    day = classes[day - 1];
     if(day === 0 || day === 6){
         $('p').text("Nah man, it looks like it's weekend rn");
         $('h1').text("So better stay at home");
     }
     else{
+        day = classes[day - 1];
         const lesson = returnClass();
         $('h1').text(lesson);
     }
