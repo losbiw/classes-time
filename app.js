@@ -22,9 +22,9 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use('/signup', require('./routes/signup'));
 app.use('/login', require('./routes/login'));
 app.use('/user', require('./routes/classes'));
+app.use('/recovery', require('./routes/recovery'));
 
 mongoose.connect(process.env.CONNECTION, {useNewUrlParser: true}, ()=>console.log('The database is connected'));
-console.log(process.env.CONNECTION);
 
 app.listen(PORT, ()=>{
     console.log(`The server is listening on the port ${PORT}`);

@@ -10,7 +10,7 @@ const User = require('../modules/userSchema');
 const router = express.Router();
 
 router.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, '../public/signup.html'));
+    res.render('signup', {msg: ''});
 });
 
 router.post('/', async (req, res)=>{
@@ -30,8 +30,9 @@ router.post('/', async (req, res)=>{
     });
     
     const userData = {
-        email: newUser.email, 
-        id: newUser._id
+        id: newUser._id,
+        text: 'Confirm your email',
+        action: 'confirm'
     };
     
     const users = await User.find();
@@ -44,7 +45,7 @@ router.post('/', async (req, res)=>{
             const mailOptions = {
                 from: process.env.email,
                 to: newUser.email,
-                subject: 'Password Confirmation',
+                subject: 'Confirmation',
                 html: data
             };
             transporter.sendMail(mailOptions, (err, data)=>{
@@ -52,7 +53,7 @@ router.post('/', async (req, res)=>{
             });
         });
         
-        return res.redirect('../../login');
+        return res.redirect('/login/message');
     } else{
         res.render('signup', {msg: 'The user already exists'});
     }

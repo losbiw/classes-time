@@ -25,7 +25,7 @@ nav{
 }
 #menu{
     position: absolute;
-    top: 1vh;
+    top: 1.5vh;
 }
 #menu:hover{
     transition: 500ms;
@@ -37,6 +37,10 @@ button{
 .SVGs{
     height: 5vh;
     width: 5vh;
+}
+.SVGs:hover{
+    transform: scale(1.2);
+    transition: 300ms;
 }
 #minecraftMode img{
     height: 5vh;

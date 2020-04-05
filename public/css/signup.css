@@ -15,6 +15,7 @@ h1{
     font-size: 8vh;
     padding: 0;
     margin: 7vh;
+    text-transform: uppercase;
 }
 
 form{
@@ -90,6 +91,10 @@ a{
     display: inline-block;
 }
 
+.password{
+    position: relative;
+}
+
 .error{
     color: #d11f1f;
 }
@@ -108,6 +113,6 @@ a{
     }
 
     .confirmation{
-        font-size: 10vw;
+        font-size: 8vw;
     }
 }

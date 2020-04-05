@@ -4,7 +4,15 @@ const User = require('../modules/userSchema');
 const router = express.Router();
 
 router.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, '../public/login.html'));
+    res.render('login', {msg: ''});
+});
+
+router.get('/messageRecovery', (req, res)=>{
+    res.render('message', {title: "Recovery", msg: "We've sent a recovery link on your email"});
+});
+
+router.get('/message', (req, res)=>{
+    res.render('message', {title: 'Confirm', msg: "We've sent a confirmation message on your email"});
 });
 
 router.post('/', async (req, res)=>{

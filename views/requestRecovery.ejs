@@ -9,19 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/signup.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <title>Login</title>
+    <title>Recovery</title>
 </head>
 <body>
-    <h1>LOGIN</h1>
-    
-    <form id="data" method="post">
-        <input type="text" name="email" placeholder="email" required>
-        <input type="password" name="password" placeholder="password" required>
-        <input type="submit" name="submit" id="submit">
+    <h1>RECOVERY</h1>
+    <form id="email" method="POST">
+        <input type="text" name="email" placeholder="email" id="email">
+        <input type="submit" id="submit">
+        <p class="error"><%= error %></p>
     </form>
-    <a href="recovery" class="password">Forgot your password?</a>
-    <p class="error"><%=msg%></p>
 
-    <a href="signup">Need an account? Go to the sign up page</a>
+    <a href="http://classes-time.herokuapp.com/">Go back to the login page</a>
+
+    <script src="public/js/requestRecovery.js"></script>
 </body>
 </html>

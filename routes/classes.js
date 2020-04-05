@@ -25,7 +25,7 @@ router.get('/:id/getClasses', async (req, res)=>{
 });
 
 router.get('/:id/confirm', async (req, res)=>{
-    res.sendFile(path.join(__dirname, '../public/confirm.html'));
+    res.render('congratulations', {text: 'Your account is confirmed'});
 })
 
 router.patch('/:id/confirm', async (req, res) =>{
@@ -33,6 +33,18 @@ router.patch('/:id/confirm', async (req, res) =>{
         {_id: req.params.id},
         {$set: {isConfirmed: true}}
     );
+});
+
+router.get('/:id/recovery', (req, res)=>{
+    res.render('newPasswordInput');
+});
+
+router.post('/:id/recovery', async (req, res)=>{
+    const user = await User.updateOne(
+        {_id: req.params.id},
+        {$set: {password: req.body.password}}
+    );
+    res.render('congratulations', {text: 'Your password was succesfully changed'});
 });
 
 module.exports = router;
