@@ -26,6 +26,7 @@ router.post('/', async (req, res)=>{
         email: req.body.email,
         password: req.body.password,
         theme: 'lightMode',
+        audio: true,
         isConfirmed: false
     });
     
@@ -62,7 +63,17 @@ router.post('/', async (req, res)=>{
 router.patch('/', async (req, res)=>{
     const updatedUser = await User.updateOne(
         {_id: req.body.id}, 
-        { $set: {theme: req.body.theme}});
+        { $set: {
+            theme: req.body.theme
+        }});
+});
+
+router.patch('/audio', async (req, res)=>{
+    const updatedUser = await User.updateOne(
+        {_id: req.body.id},
+        {$set: {
+            audio: req.body.audio
+        }});
 });
 
 module.exports = router;

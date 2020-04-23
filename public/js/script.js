@@ -31,12 +31,12 @@ window.onload = function(){
         minuteForConvert = "0" + minuteForConvert;
     }
     time = parseInt(hourForConvert + minuteForConvert, 10);
-    day = classes[day - 1];
     if(day === 0 || day === 6){
         $('p').text("Nah man, it looks like it's weekend rn");
         $('h1').text("So better stay at home");
     }
     else{
+        day = classes[day - 1];
         const lesson = returnClass();
         $('h1').text(lesson);
     }
@@ -55,7 +55,6 @@ function updatingTheme(theme){
 
 function returnClass(){
     if(time < endings[0]){
-        console.log('perviy');
         return day[0];
     }
     else if(time > endings[day.length - 1]){
@@ -79,6 +78,8 @@ function changeTheme(theme, toChange){
     $(body).css('color', text);
     $('#language').css('color', text);
     $(svgs).css('filter', filterSvg);
+    $('#play').css('display', 'none');
+    $('#pause').css('display', 'none');
     if(background != undefined){
         $(body).css('animation-name', 'none');
         $(body).css('background', background);
@@ -87,7 +88,12 @@ function changeTheme(theme, toChange){
         $(body).css('animation-name', animation);
     }
     if(theme === themes.minecraftMode){
-        audioEl.setAttribute('src', audio);
+        if(userData.audio){
+            audioEl.setAttribute('src', audio);
+            $('#pause').css('display', 'inline-block');
+        } else{
+            $('#play').css('display', 'inline-block');
+        }
         $('p').css('text-shadow', 'black 0 0 1vh');
         $('h1').css('text-shadow', 'black 0 0 1vh');
         if(time <= endings[endings.length - 1]){
@@ -162,3 +168,23 @@ function getAdress(){
     };
     return adress;
 }
+
+function setAudio(action, reverseAction, src, audioBool){
+    $(`#${action}`).css('display', 'none');
+    $(`#${reverseAction}`).css('display', 'inline-block');
+    const audioEl = document.getElementById('audio');
+    audioEl.setAttribute('src', src);
+    $.ajax({
+        type: 'PATCH',
+        url: '/signup/audio',
+        data: {
+            id: adress,
+            audio: audioBool
+        },
+        dataType: 'json'
+    });
+}
+
+$("#pause").click(()=>setAudio('pause', 'play', '', false));
+$("#play").click(()=>setAudio('play', 'pause', themes.minecraftMode.audio, true));
+

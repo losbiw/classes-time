@@ -83,6 +83,10 @@ button:focus{
     outline: none;
 }
 
+#play, #pause{
+    display: none;
+}
+
 @media screen and (max-width: 800px){
     h1{
         font-size: 6vw;

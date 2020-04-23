@@ -5,6 +5,7 @@ const newUser = new mongoose.Schema({
     email: String,
     password: String,
     theme: String,
+    audio: Boolean,
     isConfirmed: Boolean
 });
 
