@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 app.use(express.static(join(__dirname, 'build')));
 app.use(express.json());
