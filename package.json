@@ -1,0 +1,28 @@
+{
+  "name": "classes-time",
+  "version": "2.0.0",
+  "description": "A project to show the current lesson in the school",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "javascript",
+    "react",
+    "reactjs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.27",
+    "node-fetch": "^2.6.0",
+    "nodemailer": "^6.4.11"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
