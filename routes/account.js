@@ -70,7 +70,7 @@ router.get('/confirm/:id', async(req, res) => {
         await currentUser.save();
     }
 
-    res.redirect(`http://localhost:${PORT}/`);
+    res.redirect(`https://classes-time.herokuapp.com/`);
 });
 
 router.post('/signup', async(req, res) => {
