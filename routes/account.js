@@ -70,7 +70,7 @@ router.get('/confirm/:id', async(req, res) => {
         await currentUser.save();
     }
 
-    res.redirect('http://localhost:3000/');
+    res.redirect(`http://localhost:${PORT}/`);
 });
 
 router.post('/signup', async(req, res) => {
