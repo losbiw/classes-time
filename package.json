@@ -4,7 +4,7 @@
   "description": "A project to show the current lesson in the school",
   "main": "app.js",
   "scripts": {
-    "start": "node server",
+    "start": "node server/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
